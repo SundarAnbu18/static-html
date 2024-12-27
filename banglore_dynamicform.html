@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Screen</title>
+    <!-- REQUIRED CDN  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css"
+        crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@24.7.0/build/js/intlTelInput.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css"
+        crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
+        crossorigin="anonymous"></script>
+
+    <style>
+        .body-color {
+            font-family: Helvetica, Arial, sans-serif;
+        }
+
+        .input-box {
+            border: 1px solid #D8D8D8;
+            font-size: 14px;
+            font-weight: 400;
+            color: black;
+            height: 33px;
+            width: 100%;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            padding: 0px 5px 0px 5px;
+
+        }
+
+        .signupScreen {
+            background-color: white;
+            padding: 12px 20px;
+            border-radius: 20px;
+
+        }
+
+        .custom-heading {
+            font-size: 24px;
+            font-weight: 700;
+            color: #061938;
+            line-height: 34px;
+        }
+
+        .custom-subheading {
+            font-size: 14px !important;
+            font-weight: 400;
+            line-height: 18px;
+        }
+
+        .custom-description {
+            font-size: 14px;
+            font-weight: 400;
+            color: #7b7b7b;
+        }
+
+        .custom-align-center {
+            display: flex;
+            align-items: center;
+            height: 40px;
+        }
+
+        .inputNumber {
+            color: #747474;
+            font-size: 16px;
+            height: 40px;
+            border-color: #cccc;
+            padding-left: 91px !important;
+        }
+
+        .mobNumberBox {
+            display: grid;
+        }
+
+        .max-width {
+            width: -webkit-fill-available;
+        }
+
+        .registerLink {
+            font-size: 14px;
+            font-weight: 600;
+            color: #f15a2b;
+            line-height: 14px;
+            cursor: pointer;
+        }
+
+        .custom-phonenumber {
+            font-size: 16px !important;
+            color: black !important;
+            width: 100% auto !important;
+        }
+
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            width: 100%;
+        }
+
+        .grid-item {
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            height: fit-content;
+        }
+
+        .font-22px {
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .register-button {
+            background-color: #F15A2B !important;
+            color: white !important;
+            border-radius: 7px;
+            width: 100%;
+            padding: 13px;
+            border: none;
+            margin-top: 13px;
+        }
+
+
+        input.input-box:focus {
+            border-color: #c23934;
+            outline: none;
+        }
+
+        select.input-box:focus {
+            border-color: #c23934;
+            outline: none;
+        }
+
+        select.input-box:not(:focus) {
+            border-color: #D8D8D8;
+            color: gray;
+        }
+
+        .captcha-disable {
+            width: 100%;
+            padding: 10px 40px 7px 10px;
+            border: 1px solid #dcdcdc;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+            text-align: left;
+            color: #6c6c6c;
+            cursor: not-allowed;
+            height: 35px;
+        }
+
+        .enter-captcha {
+            border-radius: 4px;
+            border: 1px solid #dcdcdc;
+            font-size: 19px;
+            cursor: pointer;
+            background-color: #f9f9f9;
+            height: 35px;
+        }
+
+        .error-message {
+            position: relative;
+            font-size: 10px;
+            color: #c23934;
+            margin-top: -20px;
+            top: -10px;
+            padding: 3px;
+        }
+
+        .iti--allow-dropdown {
+            width: 100%;
+        }
+
+        select.input-box:disabled {
+            background-color: #f3f3f3;
+            color: #6c757d;
+            cursor: not-allowed;
+            border: 1px solid #ccc;
+            opacity: 1;
+        }
+
+        .error-message-checkbox {
+            display: block;
+            color: #c23934;
+            font-size: 10px;
+            padding: 8px 0px 0px 5px;
+        }
+
+        .successpage-heading {
+            font-size: clamp(18px, 5vw, 26px);
+
+            color: black;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 600;
+            padding-bottom: 10px;
+            padding-top: 10px;
+        }
+
+        .successpage-subheading {
+            font-size: clamp(20px, 6vw, 28px);
+            color: #E8580C;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 600;
+            padding-bottom: 16px;
+
+        }
+
+        .successpage-email {
+            font-size: clamp(12px, 4vw, 16px);
+            color: grey;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 500;
+            padding-bottom: 10px;
+
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
+        #thank-you-page {
+            display: none;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .grandParentContaniner {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .parentContainer {
+            text-align: center;
+        }
+
+        .iti--separate-dial-code .iti__selected-dial-code {
+            margin-left: 6px;
+            font-size: 13px;
+        }
+
+        .input-box:disabled {
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body class="body-color">
+
+    <div class="signupScreen">
+        <div class="signupscroll">
+            <div class="font-22px"> Welcome!</div>
+            <div style="color: #000000bf; padding-top:10px; padding-bottom:15px;font-size:14px; font-weight:500">
+                Please fill in your details to register.</div>
+            <div>
+                <input type="text" placeholder="Candidate Name*" class="input-box" style="width: -webkit-fill-available"
+                    name="candidateName" onchange="validateField(this)" maxlength="80" required
+                    data-error="Enter a valid Candidate Name." />
+                <span class="error-message"></span>
+
+                <input type="email" placeholder="Email Address*" name="email" class="input-box"
+                    style="width: -webkit-fill-available" onchange="validateField(this)" required
+                    data-error="Enter a valid Email Address." />
+                <span class="error-message"></span>
+
+                <div style="width: 100%; padding-bottom:8px">
+                    <input name="phone" type="text" id="phone" class="input-box iti iti--allow-dropdown"
+                        placeholder="Phone Number*" style="width: 100%;" onchange="validateField(this)" required />
+
+                    <span id="valid-msg" class="hide"></span>
+                    <span id="error-msg" class="hide error-message" style="top:0"></span>
+                </div>
+
+                <!-- Address fields container -->
+                <div id="address-container"
+                    style="display: flex; justify-content:space-between; gap:25px; width: 100%; padding-top:3px;">
+                    <div style="display: flex; flex-direction:column; width:100%">
+                        <div>
+                            <input type="text" name="pincode" placeholder="Pincode*" id="pincode-input"
+                                class="input-box" required style="width: 100%" data-error="Enter a valid Pincode."
+                                onchange="validateField(this)" maxlength="6" />
+                            <span class="error-message" style="padding-top: 25px;"></span>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; flex-direction:column;width:100%">
+                        <input type="text" placeholder="State*" name="state" id="state-input" class="input-box" required
+                            style="width: 100%" data-error="Enter a valid State." onchange="validateField(this)"
+                            disabled />
+                        <span class="error-message" style="padding-top: 25px;"></span>
+                    </div>
+
+
+                    <div style="display: flex; flex-direction:column;width:100%">
+                        <input type="text" placeholder="City*" name="city" id="city-input" class="input-box" required
+                            style="width: 97%" data-error="Enter a valid City." onchange="validateField(this)"
+                            disabled />
+                        <span class="error-message" style="padding-top: 25px;"></span>
+                    </div>
+                </div>
+
+                <select class="input-box" onchange="validateAndEnableNext(this, 'Stream')" name="programLevel"
+                    data-error="Select Program Level" required>
+                    <option disabled selected>Program Level Applying For*</option>
+
+                </select>
+                <span class="error-message" style="padding-top: 25px;"></span>
+
+                <select class="input-box" name="Stream" onchange="validateAndEnableNext(this, 'Program')"
+                    data-error="Select Stream" required disabled>
+                    <option disabled selected>Stream</option>
+
+                </select>
+                <span class="error-message" style="padding-top: 25px;"></span>
+
+                <select class="input-box" name="Program" onchange="validateAndEnableNext(this, 'Campus')" required
+                    data-error="Select Program" disabled>
+                    <option disabled selected>Program</option>
+
+                </select>
+                <span class="error-message" style="padding-top: 25px;"></span>
+
+                <select class="input-box" name="Campus" onchange="validateField(this)"
+                    data-error="At least one Campus must be Selected." required disabled>
+                    <option disabled selected>Select Campus/location</option>
+                </select>
+                <span class="error-message" style="padding-top: 25px;"></span>
+
+
+                <div style="display: grid; grid-template-columns: auto auto; gap:15px">
+                    <div style="display: flex; justify-content:space-between; width:100%">
+                        <button disabled class="captcha-disable">
+                            <span id="captcha-error" class="captcha-box"></span>
+                        </button>
+                        <button title="Regenerate Captcha" class="enter-captcha" onclick="generateCaptcha()">
+                            &#x21bb;
+                        </button>
+                    </div>
+                    <div>
+                        <input type="text" id="captcha-input" name="Captcha" onchange="validateField(this)" required
+                            placeholder="Enter Captcha" class="input-box" style="width:98.5%;" />
+                        <span class="error-message" style="padding-top: 25px;"></span>
+                    </div>
+                </div>
+                <div style="padding-top: 10px; font-size: 12px;color: #696363;">
+                    <label>
+                        <input type="checkbox" id="checkbox-agree" name="Checkbox" required
+                            data-error="Please check this box if you want to proceed" onchange="validateField(this)" />
+                        I agree to receive information regarding my submitted application by signing up to Srishti
+                        Manipal
+                        Institute of Art, Design & Technology*
+                    </label>
+                    <span class="error-message-checkbox"></span>
+                </div>
+                <span class="error-message" id="error-message-register" style="padding-top: 25px;"></span>
+                <button class="register-button button" id="btn" type="button" onclick="validateAllFields()"
+                    style="cursor: pointer;">
+                    Register
+                </button>
+                <div style="text-align:center; padding-top:10px; font-size:13px;color: #696363;">Already have an
+                    account? <a style="text-decoration: none; font-size:13px"
+                        href="https://apply.manipal.edu/login?isLoginPage=true" target="_blank" class="registerLink"
+                        id="signInLink">Sign
+                        In</a>
+                </div>
+            </div>
+        </div>
+        <script>
+
+
+            function validateField(field) {
+                let errorSpan = field.nextElementSibling;
+
+                if (field.id === 'checkbox-agree' && !errorSpan) {
+                    errorSpan = document.createElement('span');
+                    errorSpan.classList.add('error-message-checkbox');
+                    field.parentElement.appendChild(errorSpan);
+                }
+
+                let value = field.value ? field.value.trim() : '';
+                let errorMessage = '';
+                if (errorSpan) {
+                    errorSpan.textContent = '';
+                }
+                field.classList.remove('error', 'success');
+
+                // Phone input validation
+                if (field.id === 'phone') {
+                    const intlTelInstance = window.intlTelInputGlobals.getInstance(field);
+                    if (intlTelInstance) {
+                        if (!intlTelInstance.isValidNumber()) {
+                            errorMessage = 'Please enter a valid Phone Number.';
+                        } else {
+                            value = intlTelInstance.getNumber();
+                            console.log('Valid phone number with country code:', value);
+                            field.dataset.phoneNumber = value;
+                        }
+                    } else {
+                        errorMessage = 'Phone number input is not initialized.';
+                    }
+                } else if (field.id === 'checkbox-agree') {
+                    // Checkbox validation
+                    if (field.hasAttribute('required') && !field.checked) {
+                        const customError = field.getAttribute('data-error');
+                        errorMessage = customError || 'Please agree to the terms and conditions.';
+                    }
+                } else {
+                    // General validation for other fields
+                    if (field.hasAttribute('required') && !value) {
+                        const customError = field.getAttribute('data-error');
+                        errorMessage = customError || 'This field is required.';
+                    } else if (field.type === 'email' && !/\S+@\S+\.\S+/.test(value)) {
+                        errorMessage = 'Please enter a valid Email Address.';
+                    } else if (
+                        field.tagName === 'SELECT' &&
+                        field.hasAttribute('required') &&
+                        field.selectedIndex === 0
+                    ) {
+                        const customError = field.getAttribute('data-error');
+                        errorMessage = customError || `Please select a value.`;
+                    } else if (field.id === 'captcha-input') {
+                        const captchaValue = document.getElementById('captcha-error').textContent.trim();
+                        if (value !== captchaValue) {
+                            errorMessage = 'Captcha does not match.';
+                        }
+                    }
+                }
+
+                // Update the UI based on validation
+                if (errorMessage) {
+                    if (errorSpan) {
+                        errorSpan.textContent = errorMessage;
+                    }
+                    field.classList.add('error');
+                } else {
+                    field.classList.add('success');
+                }
+            }
+
+
+            function validateAllFields() {
+                const fields = document.querySelectorAll('.input-box, #checkbox-agree');
+                const input = document.querySelector("#phone");
+                const errorMsg = document.querySelector("#error-msg");
+                const validMsg = document.querySelector("#valid-msg");
+
+                const errorMap = [
+                    "Please enter a valid Phone Number.",
+                    "Please enter a valid Phone Number.",
+                    "Please enter a valid Phone Number.",
+                    "Please enter a valid Phone Number.",
+                    "Please enter a valid Phone Number."
+                ];
+
+                let isValid = true;
+                const formData = {};
+
+                const selectedCountry = iti.getSelectedCountryData();
+
+                const reset = () => {
+                    input.classList.remove("error");
+                    errorMsg.innerHTML = "";
+                    errorMsg.classList.add("hide");
+                    validMsg.classList.add("hide");
+                };
+
+                const showError = (msg) => {
+                    input.classList.add("error");
+                    errorMsg.innerHTML = msg;
+                    errorMsg.classList.remove("hide");
+                };
+
+                fields.forEach((field) => {
+                    const errorSpan = field.nextElementSibling;
+                    if (
+                        selectedCountry.iso2 !== 'in' &&
+                        ['pincode-input', 'state-input', 'city-input'].includes(field.id)
+                    ) {
+                        field.classList.remove('error', 'success');
+                        if (errorSpan) {
+                            errorSpan.textContent = '';
+                        }
+                        return; // Skip these fields if country is not India
+                    }
+                    if (field.id === 'pincode-input' && errorSpan && errorSpan.textContent) {
+                        if (field.classList.contains('error')) {
+                            isValid = false;
+                        }
+                        return; // Don't clear existing pincode error
+                    }
+                    // Validate phone number field
+                    if (field.id === 'phone') {
+                        reset();
+
+                        if (!input.value.trim()) {
+                            showError("Please enter a valid Phone Number.");
+                            isValid = false;
+                        } else if (iti.isValidNumber()) {
+                            const nationalNumber = iti.getNumber(intlTelInputUtils.numberFormat.NATIONAL).replace(/\D/g, '');
+                            if (selectedCountry.iso2 === 'in') {
+                                const indianPhonePattern = /^(\+91[\-\s]?)?[0]?(91)?[789]\d{9}$/;// Starts with 6-9, 10 digits
+                                const invalidPatterns = [
+                                    /^(.)\1{9}$/,
+                                    /^1234567890$/
+                                ];
+                                const nationalNumber = iti
+                                    .getNumber(intlTelInputUtils.numberFormat.NATIONAL)
+                                    .replace(/\D/g, ''); // Strip non-digits
+
+                                // Check against valid pattern and additional invalid patterns
+                                if (!indianPhonePattern.test(nationalNumber) || invalidPatterns.some((regex) => regex.test(nationalNumber))) {
+                                    showError("Please enter a valid Phone Number.");
+                                    isValid = false;
+                                } else {
+                                    validMsg.classList.remove("hide");
+                                    formData[field.name] = iti.getNumber();
+                                }
+                            }
+
+                        } else {
+                            const errorCode = iti.getValidationError();
+                            const msg = errorMap[errorCode] || "Invalid number.";
+                            showError(msg);
+                            isValid = false;
+                        }
+                    } else {
+                        validateField(field);
+
+                        if (field.classList.contains('error')) {
+                            isValid = false;
+                        } else if (field.name) {
+                            formData[field.name] = field.value.trim();
+                        }
+                    }
+                });
+
+
+                // Get Captcha value
+                const captchaValue = document.getElementById('captcha-error').textContent.trim();
+                formData['Captcha'] = captchaValue;
+
+                if (isValid) {
+                    // Prepare data for API submission
+                    const transformedData = {
+                        name: formData.candidateName,
+                        email: formData.email,
+                        mobileNumber: formData.phone,
+                        pincode: formData.pincode || '',
+                        state: formData.state || '',
+                        city: formData.city || '',
+                        programLevel: formData.programLevel,
+                        stream: formData.Stream,
+                        program: formData.Program,
+                        captch: formData.Captcha,
+                        campuses: formData.Campus,
+                        utm_source: utmSource || '',
+                        utm_medium: utmMedium || '',
+                        utm_campaign: utmCampaign || '',
+                        utm_term: utmTerm || '',
+                        utm_content: utmContent || '',
+                        isTapmiComm: false,
+                        LeadSource: "",
+                    };
+                    console.log('Transformed Data:', transformedData);
+                    // Submit the form
+                    submitForm(transformedData);
+                } else {
+                    console.warn('Form validation failed.');
+                }
+            }
+
+
+            // Separate function for form submission
+            async function submitForm(transformedData) {
+                const RegisterError = document.querySelector("#error-message-register");
+                try {
+                    const leadResponse = await fetch(
+                        "https://maheslcm.my.salesforce-sites.com/leadcapture/services/apexrest/crmlead",
+                        {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                            body: JSON.stringify(transformedData),
+                        }
+                    );
+                    const result = await leadResponse.json();
+                    console.log("Lead Creation Response:", result);
+                    // Check if the response is not OK
+                    if (!leadResponse.ok) {
+                        let errorMessageFromApi = 'Failed to submit the details.';
+                        // If the response contains an error message, extract it
+                        if (result && result[0]?.message) {
+                            errorMessageFromApi = result[0].message;
+                        }
+                        // If specific error about user already existing
+                        if (errorMessageFromApi.includes('User with this email already exists.')) {
+                            errorMessageFromApi = 'User already exists. Please Sign In.';
+                        }
+                        // Display the error message in the register error section
+                        if (RegisterError) {
+                            RegisterError.textContent = errorMessageFromApi;
+                        }
+                        // Optionally, you can throw the error here if needed to stop further execution
+                        throw new Error(errorMessageFromApi);
+                    }
+                    // If no error, proceed with success
+                    const redirectUrl = `${window.location.origin}${window.location.pathname}/thankyou.php`;
+                    window.open(redirectUrl, '_self');
+                    resetForm();
+
+                } catch (error) {
+                    console.error('Error:', error);
+
+                    // Display error message in the register error section
+                    if (RegisterError) {
+                        RegisterError.textContent = error.message || 'An unexpected error occurred.';
+                    }
+                }
+            }
+
+
+
+
+            function validateAndEnableNext(field, nextFieldName) {
+                const errorSpan = field.nextElementSibling;
+                let value = field.value ? field.value.trim() : '';
+                let errorMessage = '';
+
+                // Reset error state
+                if (errorSpan) {
+                    errorSpan.textContent = '';
+                }
+                field.classList.remove('error', 'success');
+
+                // Validate current field
+                if (field.hasAttribute('required') && (!value || field.selectedIndex === 0)) {
+                    const customError = field.getAttribute('data-error');
+                    errorMessage = customError || 'This field is required.';
+                }
+
+                // Handle validation outcome
+                if (errorMessage) {
+                    if (errorSpan) {
+                        errorSpan.textContent = errorMessage;
+                    }
+                    field.classList.add('error');
+                } else {
+                    field.classList.add('success');
+
+                    // Enable the next field if provided
+                    if (nextFieldName) {
+                        const nextField = document.querySelector(`[name="${nextFieldName}"]`);
+                        if (nextField) {
+                            nextField.disabled = false; // Enable the next select field
+                            nextField.classList.add('active'); // Optionally, add a class for styling enabled fields
+                        }
+                    }
+                }
+            }
+
+
+            function resetForm() {
+                const fields = document.querySelectorAll('.input-box');
+                fields.forEach((field) => {
+                    if (field.tagName.toLowerCase() === 'select') {
+                        field.selectedIndex = 0; // Reset to the placeholder option (disabled and selected)
+                    } else {
+                        // Reset input value for text inputs, and remove validation states
+                        field.value = '';
+                        field.classList.remove('error', 'success');
+                        const errorSpan = field.nextElementSibling;
+                        if (errorSpan) {
+                            errorSpan.textContent = '';
+                        }
+                    }
+
+                    // Ensure placeholder is not affected
+                    const placeholder = field.getAttribute('placeholder');
+                    field.setAttribute('placeholder', placeholder);
+                });
+
+                // Clear captcha input and error
+                const captchaInput = document.getElementById('captcha-input');
+                if (captchaInput) {
+                    captchaInput.value = '';
+                }
+                const PhoneInputs = document.getElementById('error-msg');
+                if (PhoneInputs) {
+                    PhoneInputs.value = '';
+                }
+                const PhoneInputError = document.getElementById('valid-msg');
+                if (PhoneInputError) {
+                    PhoneInputError.value = '';
+                }
+
+
+            }
+
+
+
+            const input = document.querySelector("#phone");
+            const button = document.querySelector("#btn");
+            const errorMsg = document.querySelector("#error-msg");
+            const validMsg = document.querySelector("#valid-msg");
+
+            // Error messages for phone number validation
+            const errorMap = ["Please enter a valid Phone Number.", "Please enter a valid Phone Number.", "Please enter a valid Phone Number.", "Please enter a valid Phone Number.", "Please enter a valid Phone Number."];
+
+            // Initialise plugin
+            const iti = window.intlTelInput(input, {
+                initialCountry: "in",
+                preferredCountries: ["in"],
+                utilsScript: "/intl-tel-input/js/utils.js?1730730622316",
+                separateDialCode: true,
+            });
+
+            // Reset error and valid messages
+            const reset = () => {
+                input.classList.remove("error");
+                errorMsg.innerHTML = "";
+                errorMsg.classList.add("hide");
+                validMsg.classList.add("hide");
+            };
+
+            // Show error message
+            const showError = (msg) => {
+                input.classList.add("error");
+                errorMsg.innerHTML = msg;
+                errorMsg.classList.remove("hide");
+            };
+
+            // Validate on button click
+            button.addEventListener("click", () => {
+                reset();
+                const selectedCountry = iti.getSelectedCountryData();
+                const nationalNumber = iti
+                    .getNumber(intlTelInputUtils.numberFormat.NATIONAL)
+                    .replace(/\D/g, "");
+
+                // Check if phone input is empty
+                if (!input.value.trim()) {
+                    showError("Please enter a valid Phone Number.");
+                    return;
+                }
+
+                // Check phone number validity
+                if (selectedCountry.iso2 === "in") {
+                    const indianPhonePattern = /(\+91[\-\s]?)?[0]?(91)?[789]\d{9}$/; // Indian rules
+                    const invalidPatterns = [
+                        /^(.)\1{9}$/,
+                        /^1234567890$/,
+                    ];
+
+                    if (
+                        !indianPhonePattern.test(nationalNumber) ||
+                        invalidPatterns.some((regex) => regex.test(nationalNumber))
+                    ) {
+                        showError("Please enter a valid Phone Number.");
+                        return;
+                    }
+                }
+
+                if (iti.isValidNumber()) {
+                    validMsg.classList.remove("hide");
+                } else {
+                    const errorCode = iti.getValidationError();
+                    const msg = errorMap[errorCode] || "Invalid phone number.";
+                    showError(msg);
+                }
+            });
+            // on keyup / change flag: reset
+            input.addEventListener('change', reset);
+            input.addEventListener('keyup', reset);
+
+
+            let generatedCaptcha = '';
+
+            function generateCaptcha() {
+                const captchaElement = document.getElementById('captcha-error');
+                if (captchaElement) {
+                    const randomNumber = Math.floor(100000 + Math.random() * 900000);
+                    captchaElement.textContent = randomNumber;
+                } else {
+                    console.error('Captcha element not found');
+                }
+            }
+
+            // Generate an initial captcha when the page loads
+            document.addEventListener('DOMContentLoaded', () => {
+                generateCaptcha();
+            });
+
+
+            async function fetchStateAndCity(pincode) {
+                const stateField = document.getElementById("state-input");
+                const cityField = document.getElementById("city-input");
+                const stateError = stateField.nextElementSibling;
+                const cityError = cityField.nextElementSibling;
+                const pincodeError = document.querySelector(
+                    "#pincode-input + .error-message"
+                );
+
+                // Reset fields and errors initially
+                stateField.value = "";
+                cityField.value = "";
+                stateField.disabled = true;
+                cityField.disabled = true;
+                stateField.classList.remove("error", "success");
+                cityField.classList.remove("error", "success");
+
+                // Clear existing error messages
+                if (stateError) {
+                    stateError.textContent = "";
+                }
+                if (cityError) {
+                    cityError.textContent = "";
+                }
+
+                // Validate the pincode format
+                if (!/^\d{6}$/.test(pincode)) {
+                    if (pincodeError) {
+                        pincodeError.textContent = "Enter the valid Pincode";
+                    }
+                    return;
+                }
+
+                try {
+                    // Replace with a reliable pincode API
+                    const response = await fetch(
+                        `https://api.postalpincode.in/pincode/${pincode}`,
+                        { signal: AbortSignal.timeout(2000) }
+                    );
+                    const data = await response.json();
+
+                    if (data && data[0]?.Status === "Success") {
+                        const postOffice = data[0].PostOffice[0];
+                        stateField.value = postOffice.State || "";
+                        cityField.value = postOffice.District || "";
+
+                        // Mark fields as valid after populating
+                        stateField.classList.add("success");
+                        cityField.classList.add("success");
+
+                        // Optionally clear any error styles for valid data
+                        validateField(stateField);
+                        validateField(cityField);
+                    } else {
+                        stateField.disabled = false;
+                        cityField.disabled = false;
+                    }
+                } catch (error) {
+                    console.error("Error fetching state and city:", error);
+                    // Enable fields for manual entry in case of error
+                    stateField.disabled = false;
+                    cityField.disabled = false;
+                }
+            }
+
+
+
+            // Add event listener to the pincode field
+            const pincodeField = document.getElementById('pincode-input');
+            if (pincodeField) {
+                pincodeField.addEventListener('change', (e) => {
+                    const pincode = e.target.value.trim();
+                    fetchStateAndCity(pincode);
+                });
+            }
+
+            // Parse the URL parameters
+            const queryParams = new URLSearchParams(window.location.search);
+
+            // Extract UTM parameters
+            const utmSource = queryParams.get('utm_source'); // e.g., 'google'
+            const utmMedium = queryParams.get('utm_medium'); // e.g., 'email'
+            const utmCampaign = queryParams.get('utm_campaign'); // e.g., 'sale'
+            const utmTerm = queryParams.get('utm_term'); // e.g., 'ad'
+            const utmContent = queryParams.get('utm_content'); // e.g., 'button'
+
+
+            // Function to populate select options
+            function populateSelect(selectElement, options, defaultOptionText) {
+                selectElement.innerHTML = `<option disabled selected>${defaultOptionText}</option>`;
+                options.forEach(option => {
+                    const optionElement = document.createElement("option");
+                    optionElement.value = option.value || option;
+                    optionElement.textContent = option.text || option;
+                    selectElement.appendChild(optionElement);
+                });
+                selectElement.disabled = false;
+            }
+
+            // Initial setup
+            document.addEventListener("DOMContentLoaded", () => {
+                const programLevelSelect = document.querySelector("[name='programLevel']");
+                const streamSelect = document.querySelector("[name='Stream']");
+                const programSelect = document.querySelector("[name='Program']");
+                const campusSelect = document.querySelector("[name='Campus']");
+
+                // Get the current full URL
+                const currentUrl = window.location.href;
+
+                // Find all matching data based on portal-url
+                const matchedData = data.filter(item => currentUrl.includes(item['portal-url']));
+
+                if (matchedData.length > 0) {
+                    // Merge the matching data to process all relevant options
+                    const mergedData = {
+                        academicLevels: [...new Set(matchedData.map(item => item.academicLevel))],
+                        streams: matchedData.flatMap(item => item.streams),
+                    };
+
+                    // Populate programLevel options
+                    populateSelect(
+                        programLevelSelect,
+                        mergedData.academicLevels.map(level => ({ text: level, value: level })),
+                        "Program Level Applying For*"
+                    );
+
+                    // Event listeners for dynamic filtering
+                    programLevelSelect.addEventListener("change", function () {
+                        const selectedLevel = this.value;
+                        const filteredStreams = mergedData.streams.filter(stream =>
+                            matchedData.some(item => item.academicLevel === selectedLevel && item.streams.includes(stream))
+                        );
+
+                        if (filteredStreams.length > 0) {
+                            populateSelect(
+                                streamSelect,
+                                filteredStreams.map(stream => ({ text: stream.streamName, value: stream.streamName })),
+                                "Stream"
+                            );
+                            streamSelect.disabled = false;
+                            programSelect.disabled = true;
+                            campusSelect.disabled = true;
+                        }
+                    });
+
+                    streamSelect.addEventListener("change", function () {
+                        const selectedStream = this.value;
+                        const filteredPrograms = mergedData.streams
+                            .find(stream => stream.streamName === selectedStream)
+                            ?.programs || [];
+
+                        if (filteredPrograms.length > 0) {
+                            populateSelect(
+                                programSelect,
+                                filteredPrograms.map(program => ({ text: program.programName, value: program.programName })),
+                                "Program"
+                            );
+                            programSelect.disabled = false;
+                            campusSelect.disabled = true;
+                        }
+                    });
+
+                    programSelect.addEventListener("change", function () {
+                        const selectedProgram = this.value;
+                        const selectedStream = streamSelect.value;
+                        const filteredPrograms = mergedData.streams
+                            .find(stream => stream.streamName === selectedStream)
+                            ?.programs || [];
+                        const selectedProgramData = filteredPrograms.find(program => program.programName === selectedProgram);
+
+                        if (selectedProgramData) {
+                            populateSelect(
+                                campusSelect,
+                                selectedProgramData.campuses.map(campus => ({ text: campus.campusName, value: campus.campusName })),
+                                "Select Campus/location"
+                            );
+                            campusSelect.disabled = false;
+                        }
+                    });
+                } else {
+                    console.log("URL doesn't match any valid data.");
+                }
+            });
+
+
+            // Address fields container disable it country code is not india
+            const addressContainer = document.getElementById("address-container");
+            input.addEventListener("countrychange", function () {
+                const selectedCountry = iti.getSelectedCountryData();
+                if (selectedCountry.iso2 === "in") {
+                    addressContainer.style.display = "flex";
+                } else {
+                    addressContainer.style.display = "none";
+                }
+            });
+
+            //get the checkbox
+            document.addEventListener('DOMContentLoaded', function () {
+                const checkbox = document.getElementById('checkbox-agree');
+
+                if (checkbox) {
+                    checkbox.addEventListener('change', function () {
+                        validateField(this);
+                    });
+                }
+            });
+
+            // Event listener to limit characters based on the selected country
+            input.addEventListener("input", (event) => {
+                const intlTelInstance = window.intlTelInputGlobals.getInstance(input);
+                const countryData = intlTelInstance.getSelectedCountryData();
+
+                if (countryData.iso2 === "in") {
+                    input.value = input.value.replace(/\D/g, "").slice(0, 10);
+                } else {
+                    input.value = input.value.replace(/\D/g, "").slice(0, 15);
+                }
+            });
+
+            input.addEventListener("keydown", (event) => {
+                const intlTelInstance = window.intlTelInputGlobals.getInstance(input);
+                const countryData = intlTelInstance.getSelectedCountryData();
+
+                if (countryData.iso2 === "in" && input.value.length >= 10 && event.key !== "Backspace") {
+                    event.preventDefault();
+                } else if (countryData.iso2 !== "in" && input.value.length >= 15 && event.key !== "Backspace") {
+                    event.preventDefault();
+                }
+            });
+
+
+            //json for select values dynamically render based on comparing the portal-url and browser url
+            const data = [
+                {
+                    "portal-url": "http://admissions.manipal.edu/Bengaluru/BTech",
+                    "academicLevel": "Undergraduation - UG",
+                    "streams": [
+                        {
+                            "streamName": "Engineering",
+                            "programs": [
+                                {
+                                    "programName": "BTech",
+                                    "campuses": [
+                                        {
+                                            "campusName": "Bengaluru"
+                                        }
+                                    ]
+                                },
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "portal-url": "http://admissions.manipal.edu/Bengaluru/IPM-BBA",
+                    "academicLevel": "Undergraduation - UG",
+                    "streams": [
+                        {
+                            "streamName": "Management & Commerce",
+                            "programs": [
+                                {
+                                    "programName": "IPM/BBA(Hons.) at TAPMI",
+                                    "campuses": [
+                                        {
+                                            "campusName": "Bengaluru"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "portal-url": "http://admissions.manipal.edu/Bengaluru/Bcom",
+                    "academicLevel": "Undergraduation - UG",
+                    "streams": [
+                        {
+                            "streamName": "Management & Commerce",
+                            "programs": [
+                                {
+                                    "programName": "B.Com (Hons.) Business Analytics / Corporate Accounting / Banking & Finance",
+                                    "campuses": [
+                                        {
+                                            "campusName": "Bengaluru"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "portal-url": "http://admissions.manipal.edu/Bengaluru/BA-BBA-LLB",
+                    "academicLevel": "Undergraduation - UG",
+                    "streams": [
+                        {
+                            "streamName": "Law",
+                            "programs": [
+                                {
+                                    "programName": "BA LLB (Hons)",
+                                    "campuses": [
+                                        {
+                                            "campusName": "Bengaluru"
+                                        },
+                                    ]
+
+                                },
+                                {
+                                    "programName": "BBA LLB (Hons)",
+                                    "campuses": [
+                                        {
+                                            "campusName": "Bengaluru"
+                                        },
+                                    ]
+
+                                }
+                            ],
+
+
+                        }
+
+                    ]
+                },
+                {
+                    "portal-url": "http://admissions.manipal.edu/Bengaluru/LLB",
+                    "academicLevel": "Undergraduation - UG",
+                    "streams": [
+                        {
+                            "streamName": "Law",
+                            "programs": [
+                                {
+                                    "programName": "LL.B. (Honours)",
+                                    "campuses": [
+                                        {
+                                            "campusName": "Bengaluru"
+                                        },
+                                    ]
+
+                                }
+                            ]
+
+                        }
+
+                    ]
+                },
+                {
+                    "portal-url": "http://admissions.manipal.edu/Bengaluru/BAJMC-BA_hunamities",
+                    "academicLevel": "Undergraduation - UG",
+                    "streams": [
+                        {
+                            "streamName": "Humanities, Liberal Arts & Social Sciences",
+                            "programs": [
+                                {
+                                    "programName": "BA/ BA (Hons.)  Journalism and Mass Communication",
+                                    "campuses": [
+                                        {
+                                            "campusName": "Bengaluru"
+                                        },
+                                    ]
+
+                                },
+                                {
+                                    "programName": "BA/ BA (Hons.) Psychology",
+                                    "campuses": [
+                                        {
+                                            "campusName": "Bengaluru"
+                                        },
+                                    ]
+
+                                },
+                                {
+                                    "programName": "BA/ BA (Hons.) English",
+                                    "campuses": [
+                                        {
+                                            "campusName": "Bengaluru"
+                                        },
+                                    ]
+
+                                },
+                                {
+                                    "programName": "BA / BA (Hons) with Major / Double Major in (English/History/Philosophy/Sociolog",
+                                    "campuses": [
+                                        {
+                                            "campusName": "Bengaluru"
+                                        },
+                                    ]
+
+                                }
+                            ],
+
+                        }
+
+                    ]
+                },
+                {
+                    "portal-url": "http://admissions.manipal.edu/Bengaluru/Bdes-BVoc",
+                    "academicLevel": "Undergraduation - UG",
+                    "streams": [
+                        {
+                            "streamName": "Art, Design & Technology",
+                            "programs": [
+                                {
+                                    "programName": "Bachelor of Design (B.Des) / Bachelor of Fine Arts (BFA) at SMI",
+                                    "campuses": [
+                                        {
+                                            "campusName": "Bengaluru"
+                                        },
+                                    ]
+
+                                },
+                                {
+                                    "programName": "Bachelor of Vocation (B.Voc.) at SMI",
+                                    "campuses": [
+                                        {
+                                            "campusName": "Bengaluru"
+                                        },
+                                    ]
+
+                                }
+                            ]
+
+                        }
+
+                    ]
+                },
+            ]
+
+        </script>
+</body>
+
+</html>
